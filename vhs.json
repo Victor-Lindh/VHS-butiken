@@ -1,0 +1,103 @@
+[
+    {
+        "id": 1,
+        "title": "Mr. Fattningen",
+        "description": "Falling Down är historien om kontoristen som helt sonika får nog, lämnar sin bil mitt i morgonköerna och beger sig till fots genom Los Angeles. Hans färd blir en psykologisk rysare när han kommer allt närmare undergången.",
+        "genre": "Crime",
+        "director": "Joel Schumacher",
+        "year": "1993",
+        "runtime": "113 min",
+        "cover": "https://i.ibb.co/xzny4RQ/Falling-Down.jpg",
+        "price": 75
+    },
+    {
+        "id": 2,
+        "title": "Yxfällan",
+        "description": "Författaren Jack Torrance söker jobb som vintervaktmästare på ett isolerat hotell i Coloradobergen. Under anställningsintervjun får han reda på att den förre vaktmästaren blivit tokig av ensamheten och isoleringen och dödat sin fru och sina två barn. Jack avskräcks inte, utan flyttar till hotellet med sin fru och sin son Danny, som har en förmåga, 'The Shining', att se syner och händelser från det förflutna. Hotellets kock Hallorann har samma förmåga och varnar Danny för rum 237 på hotellet…",
+        "genre": "Horror",
+        "director": "Stanley Kubrick",
+        "year": "1980",
+        "runtime": "146 min",
+        "cover": "https://i.ibb.co/hCvyCYn/Shining.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Titta, nu dör vi",
+        "description": "En kvinna och hennes barn tvingas ut på en skräckinjagande resa, i en nära framtid där en okänd och mystisk kraft har drivit världen till ett enda stort kaos.",
+        "genre": "Horror",
+        "director": "Susanne Bier",
+        "year": "2018",
+        "runtime": "124",
+        "cover": "https://i.ibb.co/L83bcQr/Bird-Box.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Dinosaurigen",
+        "description": "Stora vetenskapliga framsteg har gjort det möjligt att klona dinosaurier med hjälp av bevarat DNA. Mogulen John Hammond ligger bakom upptäckterna och ämnar öppna en nöjespark där besökare från världens alla hörn kan se livs levande dinosaurier med sina egna ögon. Han bjuder in fyra av världens mest framstående forskare på ämnet och sina två exalterade barnbarn för att säkerställa att allt är som det ska innan han öppnar parken för allmänheten.",
+        "genre": "Action",
+        "director": "Steven Spielberg",
+        "year": "1993",
+        "runtime": "127 min",
+        "cover": "https://i.ibb.co/pxXdXrP/Jurrasic-Park.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Domsnuten",
+        "description": "'Dredd' tar oss med till de tuffa gatorna i Mega City One, den enda oasen i det ödelagda riket Cursed Earth. Judge Dredd är den mest fruktade av de så kallade Street Judges, de som har makten att genomdriva lagar, att döma andra och att ha ihjäl dem på fläcken – om de skulle tycka det är nödvändigt...",
+        "genre": "Action",
+        "director": "Pete Travis",
+        "year": "2012",
+        "runtime": "95 min",
+        "cover": "https://i.ibb.co/CJGhP02/Dredd.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Huvudet på Skaft, John Malkovich",
+        "description": "Spike Jonzes originella film om marionettdockspelaren Craig som hittar en portal till John Malkovichs hjärna. I 15 minuter kan den som går in där vara John Malkovich. Snart ser han möjligheten att göra pengar på portalen och han börjar sälja biljetter in i John Malkovichs hjärna. Men när det hela intensifieras och Craigs hustru Lotte lägger sig i får det hela oanade konsekvenser och till sist börjar även John Malkovich ana att allt inte är som det ska...",
+        "genre": "Drama",
+        "director": "Spike Jonze",
+        "year": "1999",
+        "runtime": "113 min",
+        "cover": "https://i.ibb.co/qN4TgLr/Being-John-Malkovich.jpg"
+    },
+    {
+        "id": 7,
+        "title": "Gitarrkillern",
+        "description": "En man anländer till en liten mexikansk stad med ett gitarrfodral fyllt med vapen för att utkräva hämnd för sin flickväns mord. Mannen i fråga är en inflytelserik gangsterboss, känd som 'El Bucho'.",
+        "genre": "Action",
+        "director": "Robert Rodriguez",
+        "year": "1995",
+        "runtime": "104 min",
+        "cover": "https://i.ibb.co/mJq7KTd/Desperado.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Ensamslående",
+        "description": "Är du en utåtriktad kontorsråtta som söker mening i tillvaron och gillar att slåss? Då är den här klubben för dig.",
+        "genre": "Drama",
+        "director": "David Fincher",
+        "year": "1999",
+        "runtime": "139 min",
+        "cover": "https://i.ibb.co/C6Nw9w8/Fight-Club.jpg"
+    },
+    {
+        "id": 9,
+        "title": "Utåtriktad",
+        "description": "Fotografen L.B. Jeffries är tillfälligt rullstolsbunden på grund av ett brutet ben och roar sig med att spionera på sina grannar. Han blir mer och mer övertygad om att en av dem har mördat sin fru...",
+        "genre": "Thriller",
+        "director": "Alfred Hitchcock",
+        "year": "1954",
+        "runtime": "112 min",
+        "cover": "https://i.ibb.co/QjmCMk2/Rear-Window.jpg"
+    },
+    {
+        "id": 10,
+        "title": "Arga Lappen",
+        "description": "En oberäknelig mördarclown härjar i Gotham. Nu måste den mörke riddaren träda fram. Men vem är god? Och vem är ond?",
+        "genre": "Action",
+        "director": "Christopher Nolan",
+        "year": "2008",
+        "runtime": "152 min",
+        "cover": "https://i.ibb.co/p3x8wCW/Dark-Knight.jpg"
+    }
+]
