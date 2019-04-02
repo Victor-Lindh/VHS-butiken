@@ -42,7 +42,6 @@
     }
     h2{
         color: snow;
-
     }
     h4{
         font-size: .7em;
@@ -116,15 +115,17 @@ for (let i = 0; i < svar.length; i++) {
     list += "<img src=" + svar[i].cover + ">" + "<button class='buybutton' id='movie" + [i] + "'>Lägg i varukorgen</button><br><button class='infobutton' id='movie" + [i] + "-info'>Läs mer</button></div><br>";
     newlist.innerHTML = list;
 }
+
+// Loopa igenom alla knappar, initiera funktionen buyMovie samt räknaren vid klick på köp-knappen
 for (let x = 0; x < buybuttons.length; x++) {
     buybuttons[x].addEventListener("click", buyMovie);
-    buybuttons[x].addEventListener("click", function(){
-        let x;
-        x = count.push(1);
-        counter.innerHTML = x;
-    });
+    buybuttons[x].addEventListener("click", itemsCount);
 }
-
+function itemsCount(){
+let x;
+x = count.push(1);
+counter.innerHTML = x;
+}
 function buyMovie(e){
     let event = e.target.id;
 
