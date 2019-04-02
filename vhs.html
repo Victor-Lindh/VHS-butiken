@@ -4,108 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>VHS-test</title>
-<style>
-    body{
-        text-align: center;
-        background-color: snow;
-    }
-    #newlist{
-        display: flex;
-        flex-wrap: wrap;
-    }
-    h4{
-        font-size: .7em;
-    }
-img{
-    width: 100%;
-    height: 53vh;
-    margin-bottom: 0;
-    outline: 2px solid #D23B26;
-}
-.movie{
-    border: 2px solid #D23B26;
-    background-color: #D9A648;
-    width: 250px;
-    margin: 5px;
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-button{
-    background-color: #D23B26;
-    color: snow;
-    margin: 10px;
-    outline: 1px solid black;
-}
-h6{
-color: #5F1034;
-color:#961938;
-color:#C51D24;
-color:#D23B26;
-color:#D9A648;
-}
-</style>
+    <title>VHS-butiken</title>
+    <link rel="stylesheet" href="vhs.css">
 </head>
 <body>
-    <h1>VHS-butiken</h1>
 
-<div id="newlist">
+    <div id="basket">
+        <ul id="basketList">
+        <div>
+            <p>Antal varor:</p><span id="counter"></span>
+        </div>
+            <h2>Varukorgen</h2>
+</ul>
 
 </div>
 
+<div id="newlist">
+    <!-- HÄR VISAS ALLA FILMER -->
+</div>    
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <script>
-        let newlist = document.getElementById("newlist");
-        let list = "";
-
-    $("#newlist").load("vhs.json", function (response, status, request) {
-        
-        let svar = $.parseJSON(response)
-        console.log("parseJSON=", svar);
-        // console.log("Rådata=", response);
-        
-for (let i = 0; i < svar.length; i++) {
-    list += "<div class='movie'><h4>" + svar[i].title + "</h4>";
-    list += "<img src=" + svar[i].cover + ">" + "<button class='buybutton' id='movie" + [i] + "'>Köp den här filmen</button></div><br>";
-    newlist.innerHTML = list;
-}
-let buybutton = document.getElementsByClassName("buybutton");
-for (let x = 0; x < buybutton.length; x++) {
-    buybutton[x].addEventListener("click", buyMovie);
-}
-
-function buyMovie(e){
-    let event = e.target.id;
-    console.log(event);
-
-    switch(event){
-
-        case event="movie0":
-        console.log(svar[0].title);
-        case event="movie1":
-        console.log(svar[1].title);
-        case event="movie2":
-        console.log(svar[2].title);
-        case event="movie3":
-        console.log(svar[3].title);
-        case event="movie4":
-        console.log(svar[4].title);
-        case event="movie5":
-        console.log(svar[5].title);
-        case event="movie6":
-        console.log(svar[6].title);
-        case event="movie7":
-        console.log(svar[7].title);
-        case event="movie8":
-        console.log(svar[8].title);
-        case event="movie9":
-        console.log(svar[9].title);
-
-    }
-}
-
-    });
-    </script>
+<script src="vhs.js"></script>
+    
 </body>
 </html>

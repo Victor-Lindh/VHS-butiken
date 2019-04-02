@@ -1,0 +1,69 @@
+
+    #basket{
+        display: grid;
+        grid-column: 1;
+        width: 220px;
+        height: 100%;
+        color: snow;
+        background-color: #5F1034;
+        border-right: 2px solid black;
+        margin-right: 10px;
+        text-align: center;
+    }
+    #counter{
+        text-align: center;
+        font-size: 2em;
+        color: goldenrod;
+    }
+    ul{
+        /* grid-row: 1; */
+        list-style-type: none;
+        margin: 10px;
+    }
+    ul li{
+        text-align: center;
+    }
+    body{
+        /* text-align: center; */
+        background-color: snow;
+        display: grid;
+    }
+    #newlist{
+        display: flex;
+        flex-wrap: wrap;
+        grid-column: 2;
+    }
+    h2{
+        color: snow;
+    }
+    h4{
+        font-size: .7em;
+        color: snow;
+    }
+img{
+    width: 100%;
+    height: 53vh;
+    margin-bottom: 0;
+    outline: 2px solid #D23B26;
+}
+.movie{
+    border: 2px solid #D23B26;
+    background-color: #D9A648;
+    width: 250px;
+    margin: 0 5px 5px 5px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+button{
+    background-color: #D23B26;
+    color: snow;
+    margin: 10px;
+    outline: 1px solid black;
+}
+h6{
+color: #5F1034;
+color:#961938;
+color:#C51D24;
+color:#D23B26;
+color:#D9A648;
+}
