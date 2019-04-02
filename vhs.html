@@ -57,62 +57,76 @@ color:#D9A648;
 
     <script>
         let newlist = document.getElementById("newlist");
+        let buybuttons = document.getElementsByClassName("buybutton");
+        let infobuttons = document.getElementsByClassName("infobutton");
         let list = "";
+        let array = [];
 
     $("#newlist").load("vhs.json", function (response, status, request) {
         
         let svar = $.parseJSON(response)
         console.log("parseJSON=", svar);
-        // console.log("Rådata=", response);
         
 for (let i = 0; i < svar.length; i++) {
     list += "<div class='movie'><h4>" + svar[i].title + "</h4>";
-    list += "<img src=" + svar[i].cover + ">" + "<button class='buybutton' id='movie" + [i] + "'>Köp den här filmen</button></div><br>";
+    list += "<img src=" + svar[i].cover + ">" + "<button class='buybutton' id='movie" + [i] + "'>Lägg i varukorgen</button><br><button class='infobutton' id='movie" + [i] + "-info'>Läs mer</button></div><br>";
     newlist.innerHTML = list;
 }
-let buybutton = document.getElementsByClassName("buybutton");
-for (let x = 0; x < buybutton.length; x++) {
-    buybutton[x].addEventListener("click", buyMovie);
+for (let x = 0; x < buybuttons.length; x++) {
+    buybuttons[x].addEventListener("click", buyMovie);
 }
 
 function buyMovie(e){
     let event = e.target.id;
-    console.log(event);
 
     switch(event){
 
         case event="movie0":
-        console.log(svar[0].title);
-        break;
-        case event="movie1":
-        console.log(svar[1].title);
-        break;
-        case event="movie2":
-        console.log(svar[2].title);
-        break;
-        case event="movie3":
-        console.log(svar[3].title);
-        break;
-        case event="movie4":
-        console.log(svar[4].title);
-        break;
-        case event="movie5":
-        console.log(svar[5].title);
-        break;
-        case event="movie6":
-        console.log(svar[6].title);
-        break;
-        case event="movie7":
-        console.log(svar[7].title);
-        break;
-        case event="movie8":
-        console.log(svar[8].title);
-        break;
-        case event="movie9":
-        console.log(svar[9].title);
+        array += svar[0].title + " ";
+       
         break;
 
+
+        case event="movie1":
+        array += svar[1].title + " ";
+        
+        break;
+
+        case event="movie2":
+        array += svar[2].title + " ";
+        break;
+
+        case event="movie3":
+        array += svar[3].title + " ";
+        break;
+
+        case event="movie4":
+        array += svar[4].title + " ";
+        break;
+
+        case event="movie5":
+        array += svar[5].title + " ";
+        break;
+
+        case event="movie6":
+        array += svar[6].title + " ";
+        break;
+
+        case event="movie7":
+        array += svar[7].title + " ";
+        break;
+
+        case event="movie8":
+        array += svar[8].title + " ";
+        break;
+
+        case event="movie9":
+        array += svar[9].title + " ";
+        break;
     }
+    console.log(array);
+    let arraySon = JSON.stringify(array);
+    localStorage.setItem("Din varukorg:", arraySon);
 }
 
     });
