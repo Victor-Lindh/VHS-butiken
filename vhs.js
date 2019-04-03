@@ -5,39 +5,47 @@ let newlist = document.getElementById("newlist");
         let array = [];
         let count = [];
         let counter = document.getElementById("counter");
-
-    $("#newlist").load("vhs.json", function (response, status, request) {
+// ----------------------------------------------------------------------------------
+        // Hämta json-filen, lagra datan i variabeln svar
+    
+        $("#newlist").load("vhs.json", function (response, status, request) {   
         
         let svar = $.parseJSON(response)
         console.log("parseJSON=", svar);
         
+
+        // For-loopen skapar dynamiskt HTML-elementen som behövs för att skapa produkternas sektioner, med hjälp av json-filens nycklar och värden
 for (let i = 0; i < svar.length; i++) {
-    list += "<div class='movie'><h4>" + svar[i].title + "</h4>";
-    list += "<img src=" + svar[i].cover + ">" + "<button class='buybutton' id='movie" + [i] + "'>Lägg i varukorgen</button><button class='infobutton' id='movie" + [i] + "-info'>Läs mer</button></div><br>";
+    list += "<div class='movie'>";
+    list += "<img src=" + svar[i].cover + "><h4>" + svar[i].title + "</h4>" + "<button class='buybutton' id='movie" + [i] + "'>Lägg i varukorgen</button><button class='infobutton' id='movie" + [i] + "-info'>Läs mer</button></div><br>";
     newlist.innerHTML = list;
 }
 
-// Loopa igenom alla knappar, initiera funktionen buyMovie samt räknaren vid klick på köp-knappen
+// Loopar igenom alla knappar, funktionerna buyMovie och funktionen itemsCount exekveras vid klick på köp-knapparna
+
 for (let x = 0; x < buybuttons.length; x++) {
     buybuttons[x].addEventListener("click", buyMovie);
     buybuttons[x].addEventListener("click", itemsCount);
 }
+// itemsCount initierar en räknare i varukorgen som räknar antalet varor i korgen
+
 function itemsCount(){
 let x;
 x = count.push(1);
-counter.innerHTML = x;
+counter.innerHTML = [x];
+window.localStorage.setItem("Antal varor i korgen", x)
 }
+
+// buyMovie tittar på vilken films köpknapp som klickas på, sett till knappens id. Beroende på vilket id som aktiverats, skickas olika informationer till varukorgen.
 function buyMovie(e){
     let event = e.target.id;
 
     switch(event){
 
         case event="movie0":
-        
         array += svar[0].title;
-        $("#basketList").append("<li>" + svar[0].title + "<button>Ta bort</button></li>");
+        $("#basketList").append("<li>" + svar[0].title + "<span class='more'>+</span><span class='less'>-</span><button>Ta bort</button></li>");
         break;
-
 
         case event="movie1":
         array += svar[1].title;
@@ -84,10 +92,18 @@ function buyMovie(e){
         $("#basketList").append("<li>" + svar[9].title + "<button>Ta bort</button></li>");
         break;
     }
-
-
-    let arraySon = JSON.stringify(array);
+    let arraySon = JSON.stringify(array);       // Vi kör stringify på arrayen som ska skickas till localStorage
     localStorage.setItem("Din varukorg:", arraySon);
 }
+
+for (let c = 0; c < infobuttons.length; c++) {
+infobuttons[c].addEventListener("click", showInfo);
+}
+
+function showInfo(e){
+    let event = e.target.id;
+    console.log(event);
+}
+
 
     });

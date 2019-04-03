@@ -1,4 +1,3 @@
-
     #basket{
         display: grid;
         grid-column: 1;
@@ -60,6 +59,19 @@ button{
     color: snow;
     margin: 10px;
     outline: 1px solid black;
+}
+.more, .less{
+border: 1px solid black;
+
+width: 10px;
+/* padding: 3px; */
+font-size: 1.1em;
+margin: 2px;
+background-color: snow;
+color: black;
+font-weight: bolder;
+display: inline-block;
+cursor: pointer;
 }
 h6{
 color: #5F1034;
