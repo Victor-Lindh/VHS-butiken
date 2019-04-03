@@ -1,10 +1,5 @@
-.page-header {
-    background-image: url("images/stars.jpg");
-    position: absolute;
-    z-index: -1;
-}
-.page-header:after {
-    animation: grain 8s steps(10) infinite;
+.background:after {
+    animation: grain 10s steps(10) infinite;
     background-image: url("images/paper.png");
     content: "";
     height: 300%;
@@ -25,5 +20,5 @@
     60% { transform:translate(15%, 0%) }
     70% { transform:translate(0%, 15%) }
     80% { transform:translate(3%, 35%) }
-    90% { transform:translate(-10%, 10%) }
+    90% { transform:translate(-5%, 5%) }
 }
