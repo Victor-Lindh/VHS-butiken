@@ -9,6 +9,7 @@
         border-right: 2px solid black;
         margin-right: 10px;
         text-align: center;
+        font-size: 0.8em;
     }
     #counter{
         text-align: center;
