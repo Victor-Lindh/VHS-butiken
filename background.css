@@ -1,0 +1,29 @@
+.background > div {
+    width: 100px;
+    height: 2000px;
+    position: fixed;
+    z-index: -1;
+    top: -300px;
+    transform: rotate(40deg);
+}
+#stripe-1 {
+    right: 200px;
+    background-color: #961938;
+}
+#stripe-2 {
+    right: 300px;
+    background-color: #C51D24;
+}
+#stripe-3 {
+    right: 400px;
+    background-color: #D23B26;
+}
+#stripe-4 {
+    right: 500px;
+    background-color: #D9A648;
+}
+#stripe-5 {
+    width: 80px;
+    right: 600px;
+    background-color: #EBE9E5;
+}
