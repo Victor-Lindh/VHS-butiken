@@ -4,6 +4,14 @@ body {
   display: grid;
   font-family: 'Inconsolata', monospace;
 }
+/* Play VHS */
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 10px;
+}
+
+/* ===== VARUKORGEN ===== */
 #basket {
   display: grid;
   grid-column: 1;
@@ -20,28 +28,29 @@ body {
   font-size: 2em;
   color: goldenrod;
 }
-ul {
+#basketList {
   /* grid-row: 1; */
   list-style-type: none;
   margin: 10px;
   padding: 0;
 }
-ul li {
+#basketList li {
   text-align: center;
 }
+
+/* ===== FILMER ===== */
 #newlist {
   display: flex;
   flex-wrap: wrap;
   grid-column: 2;
 }
-h1 {
+.movie {
+  width: 380px;
+  height: 540px;
+  margin: 0 5px 5px 5px;
   text-align: center;
-  font-size: 3rem;
-  margin-top: 10px;
 }
-h2 {
-  color: snow;
-}
+/* Movie Title */
 h4 {
   font-size: 1rem;
   margin: 20px 0;
@@ -52,19 +61,7 @@ img {
   margin-bottom: 0;
   outline: 2px solid #D23B26;
 }
-.movie {
-  /* border: 2px solid #D23B26;
-  background-color: #D9A648; */
-  width: 380px;
-  height: 540px;
-  margin: 0 5px 5px 5px;
-  text-align: center;
-  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
-}
 button {
-  /* background-color: #D23B26;
-  color: snow;
-  margin: 10px; */
   outline: 1px solid black;
   background-color: #D23B26;
   border: none;
@@ -88,5 +85,5 @@ h6 {
   color:#C51D24;
   color:#D23B26;
   color:#D9A648;
-  color:#EBE9E5
+  color:#EBE9E5;
 }
