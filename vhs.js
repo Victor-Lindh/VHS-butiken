@@ -20,7 +20,7 @@ let newlist = document.getElementById("newlist");
 
 for (let i = 0; i < svar.length; i++) {
     list += "<div class='movie'>";
-    list += "<img src=" + svar[i].cover + "><h4>" + svar[i].title + "</h4>" + "<button class='buybutton' id='movie" + [i] + "'>Lägg i varukorgen</button><button class='infobutton' id='movie" + [i] + "-info'>Läs mer</button></div><br>";
+    list += "<img src='" + svar[i].cover + "' id='movie" + [i] + "-info' class='infobutton'><h4>" + svar[i].title + "</h4><input type='number' min='1' max='10' value='1' id='movie" +[i] + "-quantity' class='quantinput'><button class='buybutton' id='movie" + [i] + "'>Lägg i varukorgen</button></div><br>";
     newlist.innerHTML = list;
 }
 
