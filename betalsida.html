@@ -31,7 +31,7 @@
         <div class="col-md-4 order-md-2 mb-4">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span>Din varukorg</span>
-            <span class="badge badge-dark badge-pill">3</span>
+            <span class="badge badge-dark badge-pill" id="counter">3</span>
           </h4>
           <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between lh-condensed">
@@ -64,7 +64,7 @@
 
         <div class="col-md-8 order-md-1">
             <h4 class="mb-3">Faktureringsadress</h4>
-            <form class="needs-validation" novalidate>
+            <form class="needs-validation" id="fakturForm" action="receipt.html" novalidate>
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="firstName">Förnamn</label>
@@ -130,9 +130,9 @@
               </div>
               
               <hr class="mb-4">
-              <button class="btn btn-lg btn-block" type="submit">Skicka beställningen</button>
+              <button class="btn btn-lg btn-block" type="submit" id="subBtn">Skicka beställningen</button>
             </form>
-          </div>
+          </div><!--Faktureringsformuläret-->
     </div> <!--första Row-->
 </div> <!--Container-->
 
@@ -143,5 +143,20 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="vhs.js"></script>
+
+<script>
+$(document).ready(function(){
+  //deklarerar värden för inputfälten
+  let firstName = $('#firstName').val();
+  let lastName = $('#lastName').val();
+  let email = $('#email').val();
+  let country = $('#country').val();
+  let city = $('#city').val();
+  let zip = $('#zip').val()
+
+
+});
+
+</script>
 </body>
 </html>
