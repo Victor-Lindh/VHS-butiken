@@ -5,16 +5,19 @@ let newlist = document.getElementById("newlist");
         let array = [];
         let count = [];
         let counter = document.getElementById("counter");
+        let basketList = document.getElementById("basketList");
 // ----------------------------------------------------------------------------------
+
         // Hämta json-filen, lagra datan i variabeln svar
     
         $("#newlist").load("vhs.json", function (response, status, request) {   
         
-        let svar = $.parseJSON(response)
-        console.log("parseJSON=", svar);
+        let svar = JSON.parse(response)
+        console.log("JSON.parse=", svar);
         
 
-        // For-loopen skapar dynamiskt HTML-elementen som behövs för att skapa produkternas sektioner, med hjälp av json-filens nycklar och värden
+        // For-loopen nedan skapar dynamiskt HTML-elementen som behövs för att skapa produkternas sektioner, med hjälp av json-filens nycklar och värden
+
 for (let i = 0; i < svar.length; i++) {
     list += "<div class='movie'>";
     list += "<img src=" + svar[i].cover + "><h4>" + svar[i].title + "</h4>" + "<button class='buybutton' id='movie" + [i] + "'>Lägg i varukorgen</button><button class='infobutton' id='movie" + [i] + "-info'>Läs mer</button></div><br>";
@@ -26,15 +29,19 @@ for (let i = 0; i < svar.length; i++) {
 for (let x = 0; x < buybuttons.length; x++) {
     buybuttons[x].addEventListener("click", buyMovie);
     buybuttons[x].addEventListener("click", itemsCount);
-}
-// itemsCount initierar en räknare i varukorgen som räknar antalet varor i korgen
 
-function itemsCount(){
-let x;
-x = count.push(1);
-counter.innerHTML = [x];
-window.localStorage.setItem("Antal varor i korgen", x)
+// itemsCount initierar en räknare i varukorgen som räknar antalet varor i korgen
 }
+
+    function itemsCount(){
+      let c = count.push(1);
+        localStorage.setItem("Antal", c)
+        
+        counter.innerHTML = localStorage.getItem("Antal");
+    }
+   
+counter.innerHTML = localStorage.getItem("Antal");
+
 
 // buyMovie tittar på vilken films köpknapp som klickas på, sett till knappens id. Beroende på vilket id som aktiverats, skickas olika informationer till varukorgen.
 function buyMovie(e){
@@ -45,6 +52,7 @@ function buyMovie(e){
         case event="movie0":
         array += svar[0].title;
         $("#basketList").append("<li>" + svar[0].title + "<span class='more'>+</span><span class='less'>-</span><button>Ta bort</button></li>");
+        
         break;
 
         case event="movie1":
@@ -92,8 +100,14 @@ function buyMovie(e){
         $("#basketList").append("<li>" + svar[9].title + "<button>Ta bort</button></li>");
         break;
     }
+    
+    
     let arraySon = JSON.stringify(array);       // Vi kör stringify på arrayen som ska skickas till localStorage
-    localStorage.setItem("Din varukorg:", arraySon);
+    localStorage.setItem("basket", arraySon);
+
+
+    
+
 }
 
 for (let c = 0; c < infobuttons.length; c++) {
@@ -105,5 +119,4 @@ function showInfo(e){
     console.log(event);
 }
 
-
-    });
+});
