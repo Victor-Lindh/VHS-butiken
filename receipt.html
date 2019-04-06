@@ -27,6 +27,25 @@
         <div class="row">
             <div class="col" id="text">
 
+            </div> <!--text-col-->
+        </div><!--text-row-->
+        <div class="row">
+            <div class="col">
+                    <a href="vhs.html" class="btn btn btn-md my-3" id="knappN"> Fortsätt handla </a>
+                    <table class="table table-striped">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">director</th>
+                                <th scope="col">Price</th>
+                              </tr>
+                            </thead>
+                            <tbody id="receiptBody">
+
+
+                            </tbody>
+                          </table>
             </div>
         </div>
     </div><!--container-->
@@ -39,31 +58,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="vhs.js"></script>
-    <script>
-    $(document).ready(function(){
-
-            
-            
-            let firstName = localStorage.getItem('firstName');
-            let lastName = localStorage.getItem('lastName');
-            let email = localStorage.getItem('email');
-            let adress = localStorage.getItem('adress')
-            let country = localStorage.getItem('country');
-            let city = localStorage.getItem('city');
-            let zip = localStorage.getItem('zip');
-
-            $('#text').html(`
-            <h2 class="d-flex justify-content-center my-3"> Tack ${firstName} ${lastName} för ditt köp! </h2>
-            <p> Vi uppskattar att du valt att handla hos oss. Dina varor kommer bli levererade av DBschenker till närmsta ombud
-            för <strong>${adress}</strong>. </p>
-            <p> Så snart din varor är packade kommer du få ett meddelande skickat till <strong>${email}</strong> om att ditt paket är på väg till dig.</p>
-            <p> Vänliga hälsningar från oss på Play VHS. </p>
-            <a href="vhs.html" class="btn btn-md my-3"> Fortsätt handla </a>
-            
-            `);   
-        
-        
-    });//Ready
-    </script>    
+    <script src="betalsida.js"></script>    
 </body>
 </html>
