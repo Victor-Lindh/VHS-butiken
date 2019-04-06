@@ -92,7 +92,7 @@
       
               <div class="mb-3">
                 <label for="address">Adress</label>
-                <input type="text" class="form-control" id="address" placeholder="Glada filmvägen 27" required>
+                <input type="text" class="form-control" id="adress" placeholder="Glada filmvägen 27" value="" required>
                 <div class="invalid-feedback">
                   Vänligen ange din leveransadress.
                 </div>
@@ -147,12 +147,26 @@
 <script>
 $(document).ready(function(){
   //deklarerar värden för inputfälten
+
+  $('#subBtn').click(function(){
   let firstName = $('#firstName').val();
   let lastName = $('#lastName').val();
   let email = $('#email').val();
   let country = $('#country').val();
-  let city = $('#city').val();
-  let zip = $('#zip').val()
+  let adress = $('#adress').val();
+  let city = $('#stad').val();
+  let zip = $('#zip').val();
+
+
+  localStorage.setItem('firstName', firstName);
+  localStorage.setItem('lastName', lastName);
+  localStorage.setItem('email', email);
+  localStorage.setItem('adress', adress)
+  localStorage.setItem('country', country);
+  localStorage.setItem('city', city)
+  localStorage.setItem('zip', zip);
+
+  });
 
 
 });
