@@ -27,7 +27,7 @@ $(document).ready(function(){
         
         // Skriver ut innehållet i varukorgen när sidan laddas
         for (let i = 0; i < itemsArray.length; i++) {
-            basketList.append("<li id='movieLi" + itemsArray[i].id + "'>" + itemsArray[i].title + " <button class='remove'>Ta bort</button></li>");
+            basketList.append("<li id='movieLi" + itemsArray[i].id + "'>" + itemsArray[i].title + " <button class='remove'>X</button></li>");
         };
 
         // ======================================= //
@@ -44,7 +44,7 @@ $(document).ready(function(){
             localStorage.setItem("Varukorgen", JSON.stringify(itemsArray));
 
             // Lägger till i varukorgen
-            basketList.append("<li id='movieLi" + movies[movieID].id + "'>" + movies[movieID].title + " <button class='remove'>Ta bort</button></li>");
+            basketList.append("<li id='movieLi" + movies[movieID].id + "'>" + movies[movieID].title + " <button class='remove'>X</button></li>");
 
             counterCheck();
 
