@@ -1,4 +1,17 @@
-#receipt{
-    background-color: rgb(255, 250, 236);
+#outline{
     border: 2px solid black;
-    box-shadow: 0 0 0 0.2rem rgba(252, 38, 0, 0.548)
+    padding: 20px;  
+}
+#receipt{
+    background-color: whitesmoke;
+    border: 2px solid #D23B26;
+}
+
+.btn{
+    background-color: #D23B26;
+    color: #EBE9E5; 
+  }
+  .btn:hover{
+    color: #D9A648;
+    box-shadow: 0 0 0 0.2rem rgba(255, 187, 0, 0.2);
+  }
