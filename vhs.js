@@ -1,5 +1,8 @@
+<<<<<<< HEAD
+=======
 $(document).ready(function(){
 
+>>>>>>> c323756d3816e842b00ce9bd2e93693156fa050d
 
 let newlist = document.getElementById("newlist");
         let buybuttons = document.getElementsByClassName("buybutton");
@@ -143,4 +146,4 @@ function showInfo(e){
 }
 
 });
-})
+

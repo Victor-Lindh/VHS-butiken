@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Receipt</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="background.css">
+    <link rel="stylesheet" href="crt.css">
+    <link rel="stylesheet" href="receipt.css">
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+</head>
+<body>
+    
+    <div class="background">
+        <div id="stripe-1"></div>
+        <div id="stripe-2"></div>
+        <div id="stripe-3"></div>
+        <div id="stripe-4"></div>
+        <div id="stripe-5"></div>
+    </div>
+
+    <h1 class="d-flex justify-content-center my-3">Play VHS</h1> 
+    <div class="container " id="outline">
+        <div class="container" id="receipt">
+        <div class="row">
+            <div class="col" id="text">
+
+            </div>
+        </div>
+    </div><!--container-->
+    
+    </div><!--outline-->
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="vhs.js"></script>
+    <script>
+    $(document).ready(function(){
+
+            
+            
+            let firstName = localStorage.getItem('firstName');
+            let lastName = localStorage.getItem('lastName');
+            let email = localStorage.getItem('email');
+            let adress = localStorage.getItem('adress')
+            let country = localStorage.getItem('country');
+            let city = localStorage.getItem('city');
+            let zip = localStorage.getItem('zip');
+
+            $('#text').html(`
+            <h2 class="d-flex justify-content-center my-3"> Tack ${firstName} ${lastName} för ditt köp! </h2>
+            <p> Vi uppskattar att du valt att handla hos oss. Dina varor kommer bli levererade av DBschenker till närmsta ombud
+            för <strong>${adress}</strong>. </p>
+            <p> Så snart din varor är packade kommer du få ett meddelande skickat till <strong>${email}</strong> om att ditt paket är på väg till dig.</p>
+            <p> Vänliga hälsningar från oss på Play VHS. </p>
+            <a href="vhs.html" class="btn btn-md my-3"> Fortsätt handla </a>
+            
+            `);   
+        
+        
+    });//Ready
+    </script>    
+</body>
+</html>
