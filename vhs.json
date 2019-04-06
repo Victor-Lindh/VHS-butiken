@@ -8,7 +8,7 @@
         "year": "1993",
         "runtime": "113 min",
         "cover": "https://i.ibb.co/xzny4RQ/Falling-Down.jpg",
-        "price": "75 kr"
+        "price": "75"
     },
     {
         "id": 2,
@@ -19,7 +19,7 @@
         "year": "1980",
         "runtime": "146 min",
         "cover": "https://i.ibb.co/hCvyCYn/Shining.jpg",
-        "price": "95 kr"
+        "price": "95"
     },
     {
         "id": 3,
@@ -30,7 +30,7 @@
         "year": "2018",
         "runtime": "124",
         "cover": "https://i.ibb.co/L83bcQr/Bird-Box.jpg",
-        "price": "115 kr"
+        "price": "115"
     },
     {
         "id": 4,
@@ -41,7 +41,7 @@
         "year": "1993",
         "runtime": "127 min",
         "cover": "https://i.ibb.co/pxXdXrP/Jurrasic-Park.jpg",
-        "price": "75 kr"
+        "price": "75"
     },
     {
         "id": 5,
@@ -52,7 +52,7 @@
         "year": "2012",
         "runtime": "95 min",
         "cover": "https://i.ibb.co/CJGhP02/Dredd.jpg",
-        "price": "95 kr"
+        "price": "95"
     },
     {
         "id": 6,
@@ -63,7 +63,7 @@
         "year": "1999",
         "runtime": "113 min",
         "cover": "https://i.ibb.co/qN4TgLr/Being-John-Malkovich.jpg",
-        "price": "75 kr"
+        "price": "75"
     },
     {
         "id": 7,
@@ -74,7 +74,7 @@
         "year": "1995",
         "runtime": "104 min",
         "cover": "https://i.ibb.co/mJq7KTd/Desperado.jpg",
-        "price": "95 kr"
+        "price": "95"
     },
     {
         "id": 8,
@@ -85,7 +85,7 @@
         "year": "1999",
         "runtime": "139 min",
         "cover": "https://i.ibb.co/C6Nw9w8/Fight-Club.jpg",
-        "price": "85 kr"
+        "price": "85"
     },
     {
         "id": 9,
@@ -96,7 +96,7 @@
         "year": "1954",
         "runtime": "112 min",
         "cover": "https://i.ibb.co/QjmCMk2/Rear-Window.jpg",
-        "price": "75 kr"
+        "price": "75"
     },
     {
         "id": 10,
@@ -107,6 +107,6 @@
         "year": "2008",
         "runtime": "152 min",
         "cover": "https://i.ibb.co/p3x8wCW/Dark-Knight.jpg",
-        "price": "115 kr"
+        "price": "115"
     }
 ]
