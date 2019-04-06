@@ -1,3 +1,4 @@
+
 let newlist = document.getElementById("newlist");
         let buybuttons = document.getElementsByClassName("buybutton");
         let infobuttons = document.getElementsByClassName("infobutton");

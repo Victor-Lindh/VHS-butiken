@@ -2,13 +2,13 @@
     {
         "id": 1,
         "title": "Mr. Fattningen",
-        "description": "Falling Down är historien om kontoristen som helt sonika får nog, lämnar sin bil mitt i morgonköerna och beger sig till fots genom Los Angeles. Hans färd blir en psykologisk rysare när han kommer allt närmare undergången.",
+        "description": "Mr. Fattningen är historien om kontoristen som helt sonika får nog, lämnar sin bil mitt i morgonköerna och beger sig till fots genom Los Angeles. Hans färd blir en psykologisk rysare när han kommer allt närmare undergången.",
         "genre": "Crime",
         "director": "Joel Schumacher",
         "year": "1993",
         "runtime": "113 min",
         "cover": "https://i.ibb.co/xzny4RQ/Falling-Down.jpg",
-        "price": 75
+        "price": "75 kr"
     },
     {
         "id": 2,
@@ -18,7 +18,8 @@
         "director": "Stanley Kubrick",
         "year": "1980",
         "runtime": "146 min",
-        "cover": "https://i.ibb.co/hCvyCYn/Shining.jpg"
+        "cover": "https://i.ibb.co/hCvyCYn/Shining.jpg",
+        "price": "95 kr"
     },
     {
         "id": 3,
@@ -28,7 +29,8 @@
         "director": "Susanne Bier",
         "year": "2018",
         "runtime": "124",
-        "cover": "https://i.ibb.co/L83bcQr/Bird-Box.jpg"
+        "cover": "https://i.ibb.co/L83bcQr/Bird-Box.jpg",
+        "price": "115 kr"
     },
     {
         "id": 4,
@@ -38,17 +40,19 @@
         "director": "Steven Spielberg",
         "year": "1993",
         "runtime": "127 min",
-        "cover": "https://i.ibb.co/pxXdXrP/Jurrasic-Park.jpg"
+        "cover": "https://i.ibb.co/pxXdXrP/Jurrasic-Park.jpg",
+        "price": "75 kr"
     },
     {
         "id": 5,
         "title": "Domsnuten",
-        "description": "'Dredd' tar oss med till de tuffa gatorna i Mega City One, den enda oasen i det ödelagda riket Cursed Earth. Judge Dredd är den mest fruktade av de så kallade Street Judges, de som har makten att genomdriva lagar, att döma andra och att ha ihjäl dem på fläcken – om de skulle tycka det är nödvändigt...",
+        "description": "'Domsnuten' tar oss med till de tuffa gatorna i Mega City One, den enda oasen i det ödelagda riket Cursed Earth. Domare Domsnut är den mest fruktade av de så kallade Street Judges, de som har makten att genomdriva lagar, att döma andra och att ha ihjäl dem på fläcken – om de skulle tycka det är nödvändigt...",
         "genre": "Action",
         "director": "Pete Travis",
         "year": "2012",
         "runtime": "95 min",
-        "cover": "https://i.ibb.co/CJGhP02/Dredd.jpg"
+        "cover": "https://i.ibb.co/CJGhP02/Dredd.jpg",
+        "price": "95 kr"
     },
     {
         "id": 6,
@@ -58,7 +62,8 @@
         "director": "Spike Jonze",
         "year": "1999",
         "runtime": "113 min",
-        "cover": "https://i.ibb.co/qN4TgLr/Being-John-Malkovich.jpg"
+        "cover": "https://i.ibb.co/qN4TgLr/Being-John-Malkovich.jpg",
+        "price": "75 kr"
     },
     {
         "id": 7,
@@ -68,7 +73,8 @@
         "director": "Robert Rodriguez",
         "year": "1995",
         "runtime": "104 min",
-        "cover": "https://i.ibb.co/mJq7KTd/Desperado.jpg"
+        "cover": "https://i.ibb.co/mJq7KTd/Desperado.jpg",
+        "price": "95 kr"
     },
     {
         "id": 8,
@@ -78,7 +84,8 @@
         "director": "David Fincher",
         "year": "1999",
         "runtime": "139 min",
-        "cover": "https://i.ibb.co/C6Nw9w8/Fight-Club.jpg"
+        "cover": "https://i.ibb.co/C6Nw9w8/Fight-Club.jpg",
+        "price": "85 kr"
     },
     {
         "id": 9,
@@ -88,7 +95,8 @@
         "director": "Alfred Hitchcock",
         "year": "1954",
         "runtime": "112 min",
-        "cover": "https://i.ibb.co/QjmCMk2/Rear-Window.jpg"
+        "cover": "https://i.ibb.co/QjmCMk2/Rear-Window.jpg",
+        "price": "75 kr"
     },
     {
         "id": 10,
@@ -98,6 +106,7 @@
         "director": "Christopher Nolan",
         "year": "2008",
         "runtime": "152 min",
-        "cover": "https://i.ibb.co/p3x8wCW/Dark-Knight.jpg"
+        "cover": "https://i.ibb.co/p3x8wCW/Dark-Knight.jpg",
+        "price": "115 kr"
     }
 ]
