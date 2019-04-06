@@ -91,5 +91,84 @@
     });
   
   
-  });
+     
+    let firstName = localStorage.getItem('firstName');
+    let lastName = localStorage.getItem('lastName');
+    let email = localStorage.getItem('email');
+    let adress = localStorage.getItem('adress')
+    let country = localStorage.getItem('country');
+    let city = localStorage.getItem('city');
+    let zip = localStorage.getItem('zip');
+
+    $('#text').html(`
+    <h2 class="d-flex justify-content-center my-3"> Tack ${firstName} ${lastName} för ditt köp! </h2>
+    <p> Vi uppskattar att du valt att handla hos oss. Dina varor kommer bli levererade av DBschenker till närmsta ombud
+    för <strong>${adress}</strong>. </p>
+    <p> Så snart din varor är packade kommer du få ett meddelande skickat till <strong>${email}</strong> om att ditt paket är på väg till dig.</p>
+    <p> Vänliga hälsningar från oss på Play VHS. </p>
+    
+    `);
+
+    receiptTable();
+
+    function receiptTable(){
+      
+        let rows = $('#receiptBody');
+        let totalPrice = 0;
+        
+        
+        let varunummer = 0;
+
+        //loopar igenom arrayen
+      $(itemsArray).each(function(i, movie){
+        console.log(i);
+        console.log(movie.price)
+        //lägger till varje films pris i totalPrice variabeln
+        let moviePrice = parseInt(movie.price);
+        totalPrice += moviePrice;
+
+        
+        varunummer++;
+        //Lägger till values från itemsArray som produkter i id="items"
+        $(rows).append(`
+        <tr>
+        <th scope="row">${varunummer}</th>
+        <td>${movie.title}</td>
+        <td>${movie.director}</td>
+        <td>${movie.price} Kr</td>
+      </tr>
+        `);
+      });
+      
+      $(rows).append(`
+      <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td class="text-right">
+      <p> <strong>Moms: </strong></p>
+      </td>
+      <td class="text-center"> <p><strong>${totalPrice * 0.25}Kr</strong></p> </td>
+      </tr>
+
+      <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td class="text-right">
+      <h6> <strong>Totalsumma: </strong></h6>
+      </td>
+      <td class="text-center text-danger"> <h6><strong>${totalPrice}Kr</strong></h6> </td>
+      </tr>
+      `);
+    
+    };
+
+    $('#knappN').click(function(){
+
+        localStorage.clear();
+        itemsArray = [];
+        basketList.empty();
+        
+    });
+
+  }); //Ready
   
