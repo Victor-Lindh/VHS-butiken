@@ -9,23 +9,24 @@ let newlist = document.getElementById("newlist");
         let count = [];
         let counter = document.getElementById("counter");
         let basketList = document.getElementById("basketList");
-        let $removeButtons = $(".remove");
-        console.log($removeButtons);
+
 // ----------------------------------------------------------------------------------
-
-        // Hämta json-filen, lagra datan i variabeln svar
     
-        $("#newlist").load("vhs.json", function (response, status, request) {   
-        
-        let svar = JSON.parse(response)
-        console.log("JSON.parse=", svar);
-        
+    $("#newlist").load("vhs.json", function (response, status, request) {   
+    
+    let svar = JSON.parse(response)
+    console.log("JSON.parse=", svar);
 
-        // For-loopen nedan skapar dynamiskt HTML-elementen som behövs för att skapa produkternas sektioner, med hjälp av json-filens nycklar och värden
+    // For-loopen nedan hämtar dynamiskt de element som behövs för att skapa produkternas sektioner, med hjälp av JSON-filens nycklar och värden.
 
 for (let i = 0; i < svar.length; i++) {
-    list += "<div class='movie'>";
-    list += "<img src='" + svar[i].cover + "' id='movie" + [i] + "-info' class='infobutton'><h4>" + svar[i].title + "</h4><input type='number' min='1' max='10' value='1' id='movie" +[i] + "-quantity' class='quantinput'><button class='buybutton' id='movie" + [i] + "'>Lägg i varukorgen</button></div><br>";
+    list += 
+    `<div class="movie">
+    <img src="${svar[i].cover}" id="movie${[i]}info" class="infobutton">
+    <h4>${svar[i].title}</h4>
+    <input type="number" min="1" max="10" value="1" id="movie${[i]}-quantity" class="quantinput">
+    <button class="buybutton" id="movie${[i]}">Lägg i varukorgen</button>
+    </div><br>`
     newlist.innerHTML = list;
 }
 
@@ -36,20 +37,18 @@ while (localStorage.antal >= 0){
 for (let x = 0; x < buybuttons.length; x++) {
     buybuttons[x].addEventListener("click", buyMovie);
 
-// buyMovie tittar på vilken films köpknapp som klickas på, sett till knappens id. Beroende på vilket id som aktiverats, skickas olika informationer till varukorgen.
+// buyMovie tittar på vilken films köpknapp som klickas på, sett till knappens id. Beroende på vilket id som aktiverats, skickas respektive produktinformation till varukorgen.
 
 function buyMovie(e){
     let event = e.target.id;
-    console.log(event);
-
     switch(event){
 
         case event="movie0":
         array += svar[0].title;
+        console.log(typeof array);
         let movie0quant = +$("#movie0-quantity").val();
         $("#basketList").append("<li><input type='number' class='quantity' min='1' max='10'>" + " x " + svar[0].title + "<button class='remove' id='$testID'>Ta bort</button></li>");
         count += movie0quant;
-        
         break;
 
         case event="movie1":
@@ -115,32 +114,34 @@ function buyMovie(e){
         count += movie9quant;
         break;
     }
-    // Ta bort-knappar
+
+    // Ta bort föremål ur varukorgen
 $(".remove").on("click", function(){
     $(this.parentElement).remove();
-
-   let newAmnt = localStorage.getItem("Antal");
-    counter.innerHTML = newAmnt;
 
 });
     count = Number(count);
     localStorage.setItem("Antal", count);
+
     counter.innerHTML = localStorage.getItem("Antal");
-    let arraySon = JSON.stringify(array);       // Vi kör stringify på arrayen som ska skickas till                                                     localStorage
+    let arraySon = JSON.stringify(array);       // Vi konverterar till JSON med hjälp av stringify-metoden innan allt skickas till localStorage.
     localStorage.setItem("basket", arraySon);
+
 }
 counter.innerHTML = localStorage.getItem("Antal");
-}
 
-for (let c = 0; c < infobuttons.length; c++) {
-infobuttons[c].addEventListener("click", showInfo);
 }
 
 // Funktionen showInfo tittar på vilken infoknapps id som klickas på
-function showInfo(e){
+for (let c = 0; c < infobuttons.length; c++) {
+infobuttons[c].addEventListener("click", showInfo);
+function showInfo(e){       
     let event = e.target.id;
     console.log(event);
+  }
 }
+
+
 
 });
 })
