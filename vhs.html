@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>VHS-butiken</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
     <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 </head>
@@ -23,6 +23,7 @@
     <!-- Title -->
     <h1>Play VHS</h1>
 
+    <!-- Shopping cart -->
     <div id="basket">
         <h2>Varukorgen</h2>
         <h3>Antal varor:</h3>
@@ -34,12 +35,14 @@
     </div>
 
     <div id="newList">
-        <!-- HÄR VISAS ALLA FILMER -->
+        <!-- Display movies here -->
     </div>
+
+    <!-- Link to JSON -->
     <a href="vhs.json" id="json">{JSON}</a>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="vhs.js"></script>
-    <script src="knapp.js"></script>
+    <script src="script/vhs.js"></script>
+    <script src="script/checkoutBtn.js"></script>
 </body>
 </html>

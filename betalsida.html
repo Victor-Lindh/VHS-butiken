@@ -1,125 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Betalsida</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="background.css">
-    <link rel="stylesheet" href="crt.css">
-    <link rel="stylesheet" href="checkout.css">
-    <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
-</head>
-<body>
- 
-    <div class="background">
-        <div id="stripe-1"></div>
-        <div id="stripe-2"></div>
-        <div id="stripe-3"></div>
-        <div id="stripe-4"></div>
-        <div id="stripe-5"></div>
-    </div>
 
-<div class="container">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Betalsida</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style/style.css">
+  <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+</head>
+
+<body>
+
+  <div class="background">
+    <div id="stripe-1"></div>
+    <div id="stripe-2"></div>
+    <div id="stripe-3"></div>
+    <div id="stripe-4"></div>
+    <div id="stripe-5"></div>
+  </div>
+
+  <div class="container">
 
     <div class="d-flex justify-content-center my-3">
-        <h1>Play VHS</h1>
+      <h1>Play VHS</h1>
     </div>
 
     <div class="row">
-        <div class="col-md-4 order-md-2 mb-4">
-          <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span>Din varukorg</span>
-            <span class="badge badge-dark badge-pill" id="counter2"></span>
-          </h4>
-          <ul class="list-group mb-3" id="items">
+      <div class="col-md-4 order-md-2 mb-4">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span>Din varukorg</span>
+          <span class="badge badge-dark badge-pill" id="counter2"></span>
+        </h4>
+        <ul class="list-group mb-3" id="items">
 
-          </ul>
-        </div>
+        </ul>
+      </div>
 
-        <div class="col-md-8 order-md-1">
-            <a href="vhs.html" class="btn btn btn-md my-3"> Fortsätt handla </a>
-            <h4 class="mb-3">Faktureringsadress</h4>
-            <form class="needs-validation" id="fakturForm" action="receipt.html" novalidate>
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="firstName">Förnamn</label>
-                  <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-                  <div class="invalid-feedback">
-                    Ett giltigt förnamn krävs.
-                  </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="lastName">Efternamn</label>
-                  <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-                  <div class="invalid-feedback">
-                    Ett giltigt efternamn krävs.
-                  </div>
-                </div>
+      <div class="col-md-8 order-md-1">
+        <a href="vhs.html" class="btn btn btn-md my-3"> Fortsätt handla </a>
+        <h4 class="mb-3">Faktureringsadress</h4>
+        <form class="needs-validation" id="fakturForm" action="receipt.html" novalidate>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName">Förnamn</label>
+              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Ett giltigt förnamn krävs.
               </div>
-      
-              <div class="mb-3">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="vhs_nissen1@exempel.com" required>
-                <div class="invalid-feedback">
-                    En giltigt epost-adress krävs.
-                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName">Efternamn</label>
+              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Ett giltigt efternamn krävs.
               </div>
-      
-              <div class="mb-3">
-                <label for="address">Adress</label>
-                <input type="text" class="form-control" id="adress" placeholder="Glada filmvägen 27" value="" required>
-                <div class="invalid-feedback">
-                  Vänligen ange din leveransadress.
-                </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="vhs_nissen1@exempel.com" required>
+            <div class="invalid-feedback">
+              En giltigt epost-adress krävs.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="address">Adress</label>
+            <input type="text" class="form-control" id="adress" placeholder="Glada filmvägen 27" value="" required>
+            <div class="invalid-feedback">
+              Vänligen ange din leveransadress.
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <label for="country">Land</label>
+              <select class="custom-select d-block w-100" id="country" required>
+                <option value="">Välj...</option>
+                <option>Danmark</option>
+                <option>Finland</option>
+                <option>Norge</option>
+                <option>Sverige</option>
+              </select>
+              <div class="invalid-feedback">
+                Vänligen ange ett giltigt land.
               </div>
-      
-              <div class="row">
-                <div class="col-md-5 mb-3">
-                  <label for="country">Land</label>
-                  <select class="custom-select d-block w-100" id="country" required>
-                    <option value="">Välj...</option>
-                    <option>Danmark</option>
-                    <option>Finland</option>
-                    <option>Norge</option>
-                    <option>Sverige</option>
-                  </select>
-                  <div class="invalid-feedback">
-                    Vänligen ange ett giltigt land.
-                  </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label for="stad">Stad</label>
-                  <input type="text" class="form-control d-block w-100" id="stad" required>
-                  </input>
-                  <div class="invalid-feedback">
-                    Vänligen ange korrekt stad.
-                  </div>
-                </div>
-                <div class="col-md-3 mb-3">
-                  <label for="zip">Postnummer</label>
-                  <input type="text" class="form-control" id="zip" placeholder="" required>
-                  <div class="invalid-feedback">
-                    En postadress krävs.
-                  </div>
-                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="stad">Stad</label>
+              <input type="text" class="form-control d-block w-100" id="stad" required>
+              </input>
+              <div class="invalid-feedback">
+                Vänligen ange korrekt stad.
               </div>
-              
-              <hr class="mb-4">
-              <button class="btn btn-lg btn-block" type="submit" id="subBtn">Skicka beställningen</button>
-            </form>
-            
-          </div><!--Faktureringsformuläret-->
-    </div> <!--första Row-->
-</div> <!--Container-->
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="zip">Postnummer</label>
+              <input type="text" class="form-control" id="zip" placeholder="" required>
+              <div class="invalid-feedback">
+                En postadress krävs.
+              </div>
+            </div>
+          </div>
+
+          <hr class="mb-4">
+          <button class="btn btn-lg btn-block" type="submit" id="subBtn">Skicka beställningen</button>
+        </form>
+
+      </div>
+      <!--Faktureringsformuläret-->
+    </div>
+    <!--första Row-->
+  </div>
+  <!--Container-->
 
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="betalsida.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="script/betalsida.js"></script>
 </body>
+
 </html>
