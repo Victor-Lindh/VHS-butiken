@@ -21,7 +21,7 @@ $(document).ready(function(){
         
         // Skriver ut innehållet i varukorgen när sidan laddas
         for (let i = 0; i < itemsArray.length; i++) {
-            basketList.append("<li id='movieLi" + itemsArray[i].id + "'>" + itemsArray[i].title + " <button class='remove'>X</button></li>");
+            basketList.append("<li id='movieLi" + itemsArray[i].id + "'>" + itemsArray[i].title + " x <span id='quantity" + itemsArray[i].id + "'>" + localStorage.getItem("Quantity" + itemsArray[i].id) + "</span><button class='remove'>X</button></li>");
         };
 
         counterCheck();
@@ -34,20 +34,35 @@ $(document).ready(function(){
             let movieID = event.target.id;
             movieID = movieID.replace("btn",""); // 0,1,2...9
 
-            // Lägger till filmens objekt i listan
-            itemsArray.push(movies[movieID]);
-            // Lägger till hela listan i LS som en sträng
-            localStorage.setItem("Varukorgen", JSON.stringify(itemsArray));
+            let quantity = document.getElementById("quantity" + movies[movieID].id) ? document.getElementById("quantity" + movies[movieID].id) : 0;
 
-            // Lägger till i varukorgen
-            basketList.append("<li id='movieLi" + movies[movieID].id + "'>" + movies[movieID].title + " <button class='remove'>X</button></li>");
+            console.log(document.getElementById("movieLi1"));
 
-            counterCheck();
+            let qaParse = 1;
 
+            if (quantity == 0 ){
+                // Lägger till filmens objekt i listan
+                itemsArray.push(movies[movieID]);
+                // Lägger till hela listan i LS som en sträng
+                localStorage.setItem("Varukorgen", JSON.stringify(itemsArray));
+    
+                // Lägger till i varukorgen
+                basketList.append("<li id='movieLi" + movies[movieID].id + "'>" + movies[movieID].title + " x <span id='quantity" + movies[movieID].id + "'>1</span><button class='remove'>X</button></li>");
+
+                localStorage.setItem("Quantity" + movies[movieID].id, qaParse);
+    
+                counterCheck();
+
+            }
+            else {
+                qaParse = parseInt(quantity.innerHTML, 10);
+                qaParse++;
+                localStorage.setItem("Quantity" + movies[movieID].id, qaParse);
+                quantity.innerHTML = qaParse;
+            }
         });
 
         // Rensar valfritt objekt ur varukorgen
-        // Obs: Funkar bara när man laddar om sidan
         $('#basketList').on("click", function(event){
             
             if ($(event.target).hasClass("remove")) {
