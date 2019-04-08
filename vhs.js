@@ -36,8 +36,6 @@ $(document).ready(function(){
 
             let quantity = document.getElementById("quantity" + movies[movieID].id) ? document.getElementById("quantity" + movies[movieID].id) : 0;
 
-            console.log(document.getElementById("movieLi1"));
-
             let qaParse = 1;
 
             if (quantity == 0 ){
@@ -51,8 +49,7 @@ $(document).ready(function(){
 
                 localStorage.setItem("Quantity" + movies[movieID].id, qaParse);
     
-                counterCheck();
-
+                
             }
             else {
                 qaParse = parseInt(quantity.innerHTML, 10);
@@ -60,6 +57,7 @@ $(document).ready(function(){
                 localStorage.setItem("Quantity" + movies[movieID].id, qaParse);
                 quantity.innerHTML = qaParse;
             }
+            counterCheck();
         });
 
         // Rensar valfritt objekt ur varukorgen
@@ -98,7 +96,16 @@ $(document).ready(function(){
 
         // Check total of items in the basket
         function counterCheck(){
-            counter.innerHTML = itemsArray.length;
+
+            let counterCounter = 0;
+
+            for (let i = 1; i <= itemsArray.length; i++) {
+
+                let counterMovie = parseInt(localStorage.getItem("Quantity" + i));
+                counterCounter = counterCounter + counterMovie;
+                
+            }
+            counter.innerHTML = counterCounter;
         };
 
     });  
