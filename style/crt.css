@@ -1,6 +1,6 @@
 .background:after {
     animation: grain 10s steps(10) infinite;
-    background-image: url("images/paper.png");
+    background-image: url("../images/paper.png");
     content: "";
     height: 300%;
     left: -50%;
