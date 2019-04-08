@@ -5,30 +5,26 @@ $(document).ready(function(){
         let counter = document.getElementById("counter");
         let basketList = $('#basketList');
         let movieBox = "";
-        let itemsArray = localStorage.getItem('Varukorgen') ? JSON.parse(localStorage.getItem('Varukorgen')) : [];
+        let itemsArray = localStorage.getItem('Varukorgen') ? JSON.parse(localStorage.getItem('Varukorgen')) : []; // En array med objekt från LS (annars tom)
         let movies = response; // Array med alla objekt från JSON
 
-        // Check total of items in the basket
-        function counterCheck(){
-            counter.innerHTML = itemsArray.length;
-        };
-
-        counterCheck();
-
+        
         // ======================================== //
         // On Load
 
         // Visar alla filmer på skärmen
         for (let i = 0; i < movies.length; i++) {
-            movieBox += "<div class='movie'>";
+            movieBox = "<div class='movie'>";
             movieBox += "<img src='" + movies[i].cover + "' id='movie" + [i] + "-info' class='infobutton'><h4>" + movies[i].title + "</h4><button class='buybutton' id='btn" + [i] + "'>Köp</button></div><br>";
-            newList.innerHTML = movieBox;
+            newList.innerHTML += movieBox;
         };
         
         // Skriver ut innehållet i varukorgen när sidan laddas
         for (let i = 0; i < itemsArray.length; i++) {
             basketList.append("<li id='movieLi" + itemsArray[i].id + "'>" + itemsArray[i].title + " <button class='remove'>X</button></li>");
         };
+
+        counterCheck();
 
         // ======================================= //
         // Klickfunktioner
@@ -81,6 +77,15 @@ $(document).ready(function(){
             basketList.empty();
             counterCheck();
         });
+
+        // ======================================= //
+        // Functions
+
+        // Check total of items in the basket
+        function counterCheck(){
+            counter.innerHTML = itemsArray.length;
+        };
+
     });  
 });
 
