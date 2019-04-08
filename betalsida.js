@@ -39,9 +39,9 @@
       counter.innerHTML = antalVaror;
       
     };
-  
+
     varukorg();
-  
+
     function varukorg(){
       
       let items = $('#items');

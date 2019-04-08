@@ -15,3 +15,8 @@
     color: #D9A648;
     box-shadow: 0 0 0 0.2rem rgba(255, 187, 0, 0.2);
   }
+
+  #counter2{
+    position: fixed;
+    top: -4999999px;
+  }
