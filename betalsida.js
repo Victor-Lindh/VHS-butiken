@@ -24,12 +24,20 @@
     let itemsArray = localStorage.getItem('Varukorgen') ? JSON.parse(localStorage.getItem('Varukorgen')) : [];
   
     counter(); 
+
     //Itemsarray.length blir siffran i elementet med id="counter"
     function counter(){
-  
-      let counter = $('#counter');
-      $(counter).html(itemsArray.length);
-  
+      let counter = document.getElementById('counter2');
+      let antalVaror = 0;
+      $(itemsArray).each(function(i,movie){
+
+        let antal = parseInt(localStorage.getItem('Quantity' + movie.id));
+        antalVaror += antal;
+
+      });
+      
+      counter.innerHTML = antalVaror;
+      
     };
   
     varukorg();
