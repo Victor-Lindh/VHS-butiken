@@ -26,7 +26,7 @@ $(document).ready(function(){
                 console.log(movieID);
                 movieID = movieID.replace("movie",""); // Ta bort "movie" ur IDt för att hitta index
                 
-                $(".info#info"+[i]+"").show();
+                $(".info#info"+[i]+"").fadeIn();
                 $(".info#info"+[i]+"").append("<img src='" + movies[movieID].cover + "'><p>" + movies[movieID].description + 
                 "<br><br>Årtal: " + movies[movieID].year + "<br>Speltid: " + movies[movieID].runtime + 
                 "<br>Regissör: " + movies[movieID].director + "<br>Pris: " + movies[movieID].price + " kr<br>" +
