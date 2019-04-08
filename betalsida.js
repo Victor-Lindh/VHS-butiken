@@ -23,10 +23,10 @@
     //filmer i LS
     let itemsArray = localStorage.getItem('Varukorgen') ? JSON.parse(localStorage.getItem('Varukorgen')) : [];
   
-    counter(); 
+    counterTest(); 
 
     //Itemsarray.length blir siffran i elementet med id="counter"
-    function counter(){
+    function counterTest(){
       let counter = document.getElementById('counter2');
       let antalVaror = 0;
       $(itemsArray).each(function(i,movie){
@@ -129,7 +129,6 @@
         let rows = $('#receiptBody');
         let totalPrice = 0;
         let varunummer = 0;
-        let antal = 1;
 
         //loopar igenom arrayen
       $(itemsArray).each(function(i, movie){
