@@ -39,22 +39,30 @@ text-align: right;
 margin: 10px 10px 10px 0;
 font-size: 1rem;
 }
-#checkoutBtn a {
+#checkoutBtn {
 text-decoration: none;
 color: snow;
-}
-#checkoutBtn {
 background-color: green;
+padding: 14px 6px;
+outline: 1px solid black;
+border: none;
+text-align: center;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+transition: all .3s;
 }
 
 /* ===== FILMER ===== */
 #newList {
-width: 80%;
+width: 76%;
 position: relative;
-right: -25%;
+right: -20%;
 display: flex;
 flex-wrap: wrap;
 grid-column: 2;
+justify-content: space-around;
 }
 .movie {
 width: 380px;
@@ -93,7 +101,7 @@ margin: 4px 2px;
 cursor: pointer;
 transition: all .3s;
 }
-button:hover {
+button:hover, #checkoutBtn:hover {
 color: #D9A648;
 outline: 1px solid #D9A648;
 }
@@ -118,7 +126,7 @@ outline: 1px solid #D23B26;
 /* Responsive */
 @media only screen and (max-width: 1100px){
   #newList {
-    right: -32%;
+    justify-content: flex-end;
   }
   #basket {
     width: 200px;
@@ -128,4 +136,7 @@ outline: 1px solid #D23B26;
   h1 {
     text-align: right;
   }
+  /* .movie {
+    width: 340px;
+  } */
 }
