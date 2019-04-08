@@ -22,8 +22,6 @@
     
     //filmer i LS
     let itemsArray = localStorage.getItem('Varukorgen') ? JSON.parse(localStorage.getItem('Varukorgen')) : [];
-    console.log(itemsArray);
-    console.log(itemsArray[0].price);
   
     counter(); 
     //Itemsarray.length blir siffran i elementet med id="counter"
@@ -40,26 +38,33 @@
       
       let items = $('#items');
       let totalPrice = 0;
+      //Loopar igenom LS för att hämta innehållet
+
       //loopar igenom arrayen
     $(itemsArray).each(function(i, movie){
-      console.log(i);
-      console.log(movie.price)
+
+      //hämtar quantity och kopplar till rätt film.
+      let antal = localStorage.getItem('Quantity' + movie.id);
+
       //lägger till varje films pris i totalPrice variabeln
       let moviePrice = parseInt(movie.price);
-      totalPrice += moviePrice;
+      let antalPris = moviePrice * antal;
+      console.log(antalPris)
+      totalPrice += antalPris;
+
   
       //Lägger till values från itemsArray som produkter i id="items"
       $(items).append(`
       <li class="list-group-item d-flex justify-content-between lh-condensed">
                 <div>
                   <h6 class="my-0">${movie.title}</h6>
-                  <small class="descrip">${movie.director}</small>
+                  <small class="descrip">Antal: ${antal}</small>
                 </div>
-                <span class="descrip">${movie.price}</span>
+                <span class="descrip">${antalPris}Kr</span>
               </li>
       `);
     });
-    console.log(totalPrice);
+
     $(items).append(`
     <li class="list-group-item d-flex justify-content-between">
                 <span>Summa</span>
@@ -115,52 +120,49 @@
       
         let rows = $('#receiptBody');
         let totalPrice = 0;
-        
-        
         let varunummer = 0;
+        let antal = 1;
 
         //loopar igenom arrayen
       $(itemsArray).each(function(i, movie){
-        console.log(i);
-        console.log(movie.price)
-        //lägger till varje films pris i totalPrice variabeln
-        let moviePrice = parseInt(movie.price);
-        totalPrice += moviePrice;
 
-        
-        varunummer++;
-        //Lägger till values från itemsArray som produkter i id="items"
-        $(rows).append(`
-        <tr>
-        <th scope="row">${varunummer}</th>
-        <td>${movie.title}</td>
-        <td>${movie.director}</td>
-        <td>${movie.price} Kr</td>
-      </tr>
-        `);
-      });
-      
+      //hämtar quantity och kopplar till rätt film.
+      let antal = localStorage.getItem('Quantity' + movie.id);
+
+      //lägger till varje films pris i totalPrice variabeln
+      let moviePrice = parseInt(movie.price);
+      let antalPris = moviePrice * antal;
+      console.log(antalPris)
+      totalPrice += antalPris;
+      varunummer++;
+
+      //Lägger till values från itemsArray som produkter i id="items"
       $(rows).append(`
       <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td class="text-right">
-      <p> <strong>Moms: </strong></p>
-      </td>
-      <td class="text-center"> <p><strong>${totalPrice * 0.25}Kr</strong></p> </td>
-      </tr>
-
-      <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td class="text-right">
-      <h6> <strong>Totalsumma: </strong></h6>
-      </td>
-      <td class="text-center text-danger"> <h6><strong>${totalPrice}Kr</strong></h6> </td>
-      </tr>
+      <th scope="row">${varunummer}</th>
+      <td>${movie.title}</td>
+      <td>${movie.director}</td>
+      <td>${antal}</td>
+      <td>${antalPris} Kr</td>
+    </tr>
       `);
+    });
     
-    };
+    $(rows).append(`
+
+    <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="text-right">
+    <h6> <strong>Totalsumma: </strong></h6>
+    </td>
+    <td class="text-center text-danger"> <h6><strong>${totalPrice}Kr</strong></h6> </td>
+    </tr>
+    `);
+        
+    
+    };//Receipttable()
 
     $('#knappN').click(function(){
 

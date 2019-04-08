@@ -8,7 +8,8 @@
         "year": "1993",
         "runtime": "113 min",
         "cover": "https://i.ibb.co/xzny4RQ/Falling-Down.jpg",
-        "price": "75"
+        "price": "75",
+        "quantity": 0
     },
     {
         "id": 2,
