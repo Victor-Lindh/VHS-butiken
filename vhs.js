@@ -14,10 +14,30 @@ $(document).ready(function(){
 
         // Visar alla filmer på skärmen
         for (let i = 0; i < movies.length; i++) {
-            movieBox = "<div class='movie'>";
-            movieBox += "<img src='" + movies[i].cover + "' id='movie" + [i] + "-info' class='infobutton'><h4>" + movies[i].title + "</h4><button class='buybutton' id='btn" + [i] + "'>Köp</button></div><br>";
+            movieBox = "<div class='info' id='info" + [i] + "'><span class='overlay-close'>Stäng</span></div>";
+            movieBox += "<div class='movie'>";
+            movieBox += "<img src='" + movies[i].cover + "' id='movie" + [i] + "' class='infobutton'><h4>" + movies[i].title + "</h4><button class='buybutton' id='btn" + [i] + "'>Köp</button></div><br>";
             newList.innerHTML += movieBox;
         };
+
+        // Öppna Info-divvar
+
+        $(".infobutton").on("click", function(event){
+            let movieID = event.target.id;
+            movieID = movieID.replace("movie",""); // Ta bort "movie" ur IDt för att hitta index
+            
+            $(".info#info"+[movieID]+"").fadeIn();
+            $(".info#info"+[movieID]+"").append("<img src='" + movies[movieID].cover + "'><p>" + movies[movieID].description + 
+            "<br><br>Årtal: " + movies[movieID].year + "<br>Speltid: " + movies[movieID].runtime + 
+            "<br>Regissör: " + movies[movieID].director + "<br>Pris: " + movies[movieID].price + " kr<br>" +
+            "Genre: " + movies[movieID].genre + "</p>");
+        });
+
+        // Stänger info-divvar
+        $(".overlay-close").on("click", function(){
+            $(".info").hide();
+            $(".info").find("*").not("span.overlay-close").empty();
+        })
         
         // Skriver ut innehållet i varukorgen när sidan laddas
         for (let i = 0; i < itemsArray.length; i++) {
