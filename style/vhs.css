@@ -88,7 +88,7 @@ h1 {
   position: absolute;
   left: 120px;
   top: 5%;
-  width: 30%;
+  width: 560px;
   outline: 5px solid white;
 }
 .info p{
@@ -99,18 +99,18 @@ h1 {
   top: 15%;
   width: 52%;
   text-align: left;
-  left: 45%;
+  left: 720px;
 }
 .overlay-close{
-  width: 30px;
-  padding: 5px;
+  width: 40px;
+  padding: 10px;
   font-weight: lighter;
   border: 3px solid snow;
-  font-size: 0.8em;
+  font-size: 1em;
   color: white;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 50px;
+  right: 80px;
   cursor: pointer;
 }
 .overlay-close:hover{
@@ -152,16 +152,17 @@ button:hover, #checkoutBtn:hover {
   color: #D9A648;
   outline: 1px solid #D9A648;
 }
-.remove {
+.remove, .plus, .minus {
   outline: 1px solid black;
   background-color: #D9A648;
   border: none;
+  font-weight: bold;
   color: #EBE9E5;
-  padding: 8px 10px;
+  padding: 6px 8px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 14px;
   margin: 4px 2px;
   cursor: pointer;
   transition: all .3s;
