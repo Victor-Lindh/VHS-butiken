@@ -1,3 +1,9 @@
+body {
+  /* text-align: center; */
+  background-color: snow;
+  display: grid;
+  font-family: 'Inconsolata', monospace;
+}
 
 .list-group-item{
   background-color: #5F1034;
