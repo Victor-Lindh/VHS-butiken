@@ -9,6 +9,7 @@ $('#checkoutBtn').click(function(event){
     else {
         let button = document.getElementById('checkoutBtn');
 
+        // Byter färg på knappen för en sekund
         button.style.backgroundColor = "#D23B26";
         setTimeout(function(){
             button.style.backgroundColor = "green";

@@ -1,22 +1,26 @@
 #outline{
-    border: 2px solid black;
-    padding: 20px;  
+  border: 2px solid black;
+  padding: 20px;  
 }
 #receipt{
-    background-color: whitesmoke;
-    border: 2px solid #D23B26;
+  background-color: whitesmoke;
+  border: 2px solid #D23B26;
+  padding: 20px 34px;
 }
-
 .btn{
-    background-color: #D23B26;
-    color: #EBE9E5; 
-  }
-  .btn:hover{
-    color: #D9A648;
-    box-shadow: 0 0 0 0.2rem rgba(255, 187, 0, 0.2);
-  }
-
-  #counter2{
-    position: fixed;
-    top: -4999999px;
-  }
+  background-color: #D23B26;
+  color: #EBE9E5; 
+}
+.btn:hover{
+  color: #D9A648;
+  box-shadow: 0 0 0 0.2rem rgba(255, 187, 0, 0.2);
+}
+#counter2{
+  position: fixed;
+  top: -4999999px;
+}
+#shippingAddress {
+  text-align: center;
+  font-weight: bold;
+  padding: 5px 0 20px;
+}

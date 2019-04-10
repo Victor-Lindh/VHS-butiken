@@ -2,7 +2,6 @@ $(document).ready(function(){
     $.getJSON("vhs.json", function(response){   
 
         let newList = document.getElementById("newList");
-        let counter = document.getElementById("counter");
         let basketList = $('#basketList');
         let movieBox = "";
         let itemsArray = localStorage.getItem('Varukorgen') ? JSON.parse(localStorage.getItem('Varukorgen')) : []; // En array med objekt från LS (annars tom)
@@ -21,7 +20,7 @@ $(document).ready(function(){
 
         // Skriver ut innehållet i varukorgen när sidan laddas
         for (let i = 0; i < itemsArray.length; i++) {
-            basketList.append("<li id='movieLi" + itemsArray[i].id + "'>" + itemsArray[i].title + " x <span id='quantity" + itemsArray[i].id + "'>" + localStorage.getItem("Quantity" + itemsArray[i].id) + "</span><br><button class='plus' id='plus" + itemsArray[i].id + "'>+</button><button class='minus' id='minus" + itemsArray[i].id + "'>-</button><button class='remove' id='remove" + itemsArray[i].id + "'>X</button></li>");
+            basketList.append(`<li>${itemsArray[i].title} x <span id='quantity${itemsArray[i].id - 1}'>${localStorage.getItem("Quantity" + (itemsArray[i].id - 1))}</span><br><button class='plus' id='plus${itemsArray[i].id - 1}'>+</button><button class='minus' id='minus${itemsArray[i].id - 1}'>-</button><button class='remove' id='remove${itemsArray[i].id - 1}'>X</button></li>`);
         };
 
         counterCheck(); // Kollar och skriver ut antal varor i varukorgen
@@ -34,10 +33,10 @@ $(document).ready(function(){
             let movieID = event.target.id;
             movieID = movieID.replace("btn",""); // 0,1,2...9
 
-            let quantity = document.getElementById("quantity" + movies[movieID].id) ? document.getElementById("quantity" + movies[movieID].id) : 0;
+            let quantity = document.getElementById("quantity" + movieID) ? document.getElementById("quantity" + movieID) : 0;
 
             // Deklarerar antal av samma film
-            let qaParse = 1;
+            let itemsInBasket = 1;
 
             if (quantity === 0 ){
                 // Lägger till filmens objekt i listan
@@ -46,17 +45,16 @@ $(document).ready(function(){
                 localStorage.setItem("Varukorgen", JSON.stringify(itemsArray));
     
                 // Lägger till i varukorgen
-                basketList.append("<li id='movieLi" + movies[movieID].id + "'>" + movies[movieID].title + " x <span id='quantity" + movies[movieID].id + "'>1</span><br><button class='plus' id='plus" + movies[movieID].id + "'>+</button><button class='minus' id='minus" + movies[movieID].id + "'>-</button><button class='remove' id='remove" + movies[movieID].id + "'>X</button></li>");
+                basketList.append("<li>" + movies[movieID].title + " x <span id='quantity" + movieID + "'>1</span><br><button class='plus' id='plus" + movieID + "'>+</button><button class='minus' id='minus" + movieID + "'>-</button><button class='remove' id='remove" + movieID + "'>X</button></li>");
 
-                localStorage.setItem("Quantity" + movies[movieID].id, qaParse);
-    
+                localStorage.setItem("Quantity" + movieID, itemsInBasket);
             }
             else {
-                qaParse = parseInt(quantity.innerHTML, 10);
-                qaParse++;
+                itemsInBasket = parseInt(quantity.innerHTML, 10);
+                itemsInBasket++;
                 
-                localStorage.setItem("Quantity" + movies[movieID].id, qaParse);
-                quantity.innerHTML = qaParse;
+                localStorage.setItem("Quantity" + movieID, itemsInBasket);
+                quantity.innerHTML = itemsInBasket;
             }
 
             // Grön bekräftelse när man klicka på köpknapp
@@ -71,7 +69,7 @@ $(document).ready(function(){
         // Öppna info-rutan vid klick på bild
         $(".infobutton").on("click", function(event){
             let movieID = event.target.id;
-            movieID = movieID.replace("movie","");
+            movieID = movieID.replace("movie",""); // 0,1,2...9
             
             $(".info#info"+[movieID]+"").fadeIn();
             $(".info#info"+[movieID]+"").append("<img src='" + movies[movieID].cover + "'><p>" + movies[movieID].description + 
@@ -90,63 +88,53 @@ $(document).ready(function(){
         $('#basketList').on("click", function(event){
 
             let movieID = event.target.id;
-            movieID = movieID.slice(-1);
+            movieID = movieID.slice(-1); // 0,1,2...9
 
-            let quantity = localStorage.getItem("Quantity" + movieID);
+            let itemsInBasket = localStorage.getItem("Quantity" + movieID); // String
+            itemsInBasket = parseInt(itemsInBasket, 10); // Number
 
-            /* movieID = parseInt(movieID) - 1; */
-
-            let qaParse = parseInt(quantity, 10);
-            
+            // REMOVE BUTTON            
             if (event.target.id == "remove" + movieID) {
                 // Tar bort list-elementet från varukorgen
                 $(event.target.parentElement).remove();
 
                 // Tar bort objektet från LS
-                $.each(itemsArray, function(i){
-                    if(itemsArray[i].id == movieID) {
-                        itemsArray.splice(i,1); // Removes object from index position
+                for (let i = 0; i < itemsArray.length; i++) {
+                    if (itemsArray[i].id == (parseInt(movieID) + 1)) {
+                        localStorage.removeItem("Quantity" + movieID);
+                        itemsArray.splice(i, 1); // Removes object from index position
                         localStorage.setItem("Varukorgen", JSON.stringify(itemsArray));
-                        return false;
-                    };
-                });
+                    }
+                }
             }
+
+            // PLUS BUTTON
             if (event.target.id == "plus" + movieID) {
-
-                movieID = parseInt(movieID) - 1;
-                let quantityInner = document.getElementById("quantity" + movies[movieID].id);
-                qaParse++;
+                itemsInBasket++;
                 
-                localStorage.setItem("Quantity" + movies[movieID].id, qaParse);
-                quantityInner.innerHTML = qaParse;
-                
+                localStorage.setItem("Quantity" + movieID, itemsInBasket);
+                document.getElementById("quantity" + movieID).innerHTML = itemsInBasket;            
             }
+
+            // MINUS BUTTON
             if (event.target.id == "minus" + movieID) {
+                itemsInBasket--;
 
-                movieID = parseInt(movieID) - 1;
-                let quantityInner = document.getElementById("quantity" + movies[movieID].id);
-                qaParse--;
-
-                if (qaParse === 0) {
+                if (itemsInBasket === 0) {
                     $(event.target.parentElement).remove();
-
-                    movieID += 1;
-
+                    
                     // Tar bort objektet från LS
-                    $.each(itemsArray, function(i){
-                        if(itemsArray[i].id == movieID) {
-                            itemsArray.splice(i,1); // Removes object from index position
+                    for (let i = 0; i < itemsArray.length; i++) {
+                        if (itemsArray[i].id == (parseInt(movieID) + 1)) {
+                            localStorage.removeItem("Quantity" + movieID);
+                            itemsArray.splice(i, 1); // Removes object from index position
                             localStorage.setItem("Varukorgen", JSON.stringify(itemsArray));
-                            movieID -= 1;
-                            console.log(movies[movieID].id);
-                            localStorage.setItem("Quantity" + movies[movieID].id, qaParse);
-                            return false;
-                        };
-                    });
+                        }
+                    }
                 }
                 else {
-                    localStorage.setItem("Quantity" + movies[movieID].id, qaParse);
-                    quantityInner.innerHTML = qaParse;
+                    localStorage.setItem("Quantity" + movieID, itemsInBasket);
+                    document.getElementById("quantity" + movieID).innerHTML = itemsInBasket;
                 }
             }
             counterCheck();
@@ -165,12 +153,13 @@ $(document).ready(function(){
 
         // Kollar vilka varor som finns i LS och skriver ut antalet i varukorgen
         function counterCheck(){
-            let antalVaror = 0;
-            $(itemsArray).each(function(i,movie){
-                let antal = parseInt(localStorage.getItem('Quantity' + movie.id));
-                antalVaror += antal;
-            });
-            counter.innerHTML = antalVaror; 
+            let total = 0;
+            for (let i = 0; i < localStorage.length; i++) {
+                if (localStorage.key(i) != "Varukorgen"){ // Kollar alla keys förutom Varukorgen
+                    total += parseInt(localStorage.getItem(localStorage.key(i))); // Lägger till rätt antal
+                }
+            }
+            document.getElementById('counter').innerHTML = total; 
         };
     });  
 });
